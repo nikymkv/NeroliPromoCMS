@@ -1,0 +1,24 @@
+[builderList partnersList]
+modelClass = "Neroli\Admin\Models\Partner"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set partners = partnersList.records %}
+<span class="parters__title">партнеры</span>
+<hr>
+<div class="parters__slider">
+    <div class="slider partnersSlider">
+        {% for item in partners %}
+            <div class="partners__slide"><img src="{{ item.image.path }}" alt="" /></div>
+        {% endfor %}
+        <div class="partners__slide partners__slide__add"><img
+                src="{{ 'assets/img/gallerySlider__add.svg' | theme }}" alt="" />
+            <p>стать партнером</p>
+        </div>
+    </div>
+</div>

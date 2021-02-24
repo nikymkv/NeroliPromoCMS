@@ -1,0 +1,25 @@
+fields:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        span: left
+        type: text
+    date:
+        label: 'neroli.admin::lang.admin.date'
+        mode: date
+        span: right
+        type: datepicker
+    event_photos:
+        label: 'neroli.admin::lang.admin.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    catEvent:
+        label: Relation
+        nameFrom: title
+        descriptionFrom: description
+        span: right
+        type: relation

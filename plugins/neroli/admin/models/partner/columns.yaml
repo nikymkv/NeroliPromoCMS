@@ -1,0 +1,8 @@
+columns:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        type: text
+        searchable: true
+    url:
+        label: URL
+        type: text

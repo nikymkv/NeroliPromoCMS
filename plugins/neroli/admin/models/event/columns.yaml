@@ -1,0 +1,11 @@
+columns:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        type: text
+        searchable: true
+        sortable: true
+    date:
+        label: 'neroli.admin::lang.admin.date'
+        type: date
+        searchable: false
+        sortable: true

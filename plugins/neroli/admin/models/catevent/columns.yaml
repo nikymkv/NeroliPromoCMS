@@ -1,0 +1,10 @@
+columns:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: Slug
+        type: text
+        searchable: false

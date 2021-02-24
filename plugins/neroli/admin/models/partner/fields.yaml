@@ -1,0 +1,18 @@
+fields:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        span: left
+        type: text
+    url:
+        label: URL
+        span: right
+        type: text
+    image:
+        label: 'neroli.admin::lang.admin.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload

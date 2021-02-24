@@ -1,0 +1,13 @@
+columns:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        type: text
+    desc_1:
+        label: 'neroli.admin::lang.admin.desc_1'
+        type: text
+    desc_2:
+        label: 'neroli.admin::lang.admin.desc_2'
+        type: text
+    expired_in:
+        label: 'neroli.admin::lang.admin.expired_in'
+        type: datetime

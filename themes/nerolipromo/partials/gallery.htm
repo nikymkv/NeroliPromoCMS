@@ -1,0 +1,81 @@
+[builderList catEvent]
+modelClass = "Neroli\Admin\Models\CatEvent"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[builderList events]
+modelClass = "Neroli\Admin\Models\Event"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set catEv = catEvent.records %}
+{% set ev = events.records %}
+
+<div class="gallery__title">
+  <p>галерея</p>
+  <hr />
+</div>
+<div class="gallery__toogle">
+    {% for item in catEv %}
+        <span id="galleryToogle{{ loop.index }}">{{ item.title }}</span>
+    {% endfor %}
+</div>
+<div class="gallery__slider">
+    {% for cat in catEv %}
+  <div class="slider gallerySlider gallerySlider{{ loop.index }}">
+      {% for item in ev %}
+        {% if item.catEvent.title == cat.title %}
+    <div>
+        <div class="gallery_slide" date="{{ item.date }}" title="{{ item.title }}">
+            <img class="gB1" src="{{ item.event_photos[0].path }}" alt="" />
+            <img class="gM1" src="{{ item.event_photos[1].path }}" alt="" />
+            <img class="gM2" src="{{ item.event_photos[2].path }}" alt="" />
+            <img class="gM3" src="{{ item.event_photos[3].path }}" alt="" />
+            <img class="gM4" src="{{ item.event_photos[4].path }}" alt="" />
+            <img class="gM5" src="{{ item.event_photos[5].path }}" alt="" />
+            <img class="gB2" src="{{ item.event_photos[6].path }}" alt="" />
+        </div>
+    </div>
+        {% endif %}
+      {% endfor %}
+  </div>
+  {% endfor %}
+  <div class="gallarySlider__bottom">
+      <p id="gb__date">21.01.2021</p>
+      <span id="gb__title">“Название”</span>
+  </div>
+</div>
+<div class="gallery__slider gallery__slider_mobil">
+
+    {% for cat in catEv %}
+        <div class="slider gallerySlider gallerySlider__mobil gallerySlider__mobil{{ loop.index }}">
+            {% for item in ev %}
+
+                {% for img in item.event_photos %}
+                    <div>
+                        <img class="gB1" src="{{ img.path }}" alt="" />
+                    </div>
+                {% endfor %}
+
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+  <div class="gallarySlider__bottom">
+      <p>21.01.2021</p>
+      <span>“искусство стиля”</span>
+  </div>
+</div>
+
+<img src="{{ 'assets/img/gallery_bottom.svg' | theme }}" alt="" class="gallery__bg__bottom" />
+<img src="{{ 'assets/img/gallery_topLeft.svg' | theme }}" alt="" class="gallery__bg__tioRight" />

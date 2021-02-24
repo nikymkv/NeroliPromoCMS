@@ -1,0 +1,12 @@
+title: CatEventController
+modelClass: Neroli\Admin\Models\CatEvent
+list: $/neroli/admin/models/catevent/columns.yaml
+recordUrl: 'neroli/admin/cateventcontroller/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

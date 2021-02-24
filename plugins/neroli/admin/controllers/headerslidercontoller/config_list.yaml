@@ -1,0 +1,12 @@
+title: HeaderSliderContoller
+modelClass: Neroli\Admin\Models\HeaderSlider
+list: $/neroli/admin/models/headerslider/columns.yaml
+recordUrl: 'neroli/admin/headerslidercontoller/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

@@ -1,0 +1,14 @@
+fields:
+    alt:
+        label: Alt
+        span: auto
+        type: text
+    image:
+        label: 'neroli.admin::lang.admin.image'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload

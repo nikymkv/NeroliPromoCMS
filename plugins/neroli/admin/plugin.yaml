@@ -1,0 +1,36 @@
+plugin:
+    name: 'neroli.admin::lang.plugin.name'
+    description: 'neroli.admin::lang.plugin.description'
+    author: Neroli
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Admin
+        url: /neroli/admin/headerslidercontoller
+        icon: icon-life-ring
+        sideMenu:
+            main-slider-menu-item:
+                label: 'neroli.admin::lang.admin.main-slider-menu-item'
+                url: /neroli/admin/headerslidercontoller
+                icon: icon-sitemap
+            main-info-menu-item:
+                label: 'neroli.admin::lang.admin.main_info'
+                url: /neroli/admin/maininfocontroller
+                icon: icon-sitemap
+            cat-event-menu-item:
+                label: 'neroli.admin::lang.admin.cat_event'
+                url: /neroli/admin/cateventcontroller
+                icon: icon-sitemap
+            events-menu-item:
+                label: 'neroli.admin::lang.admin.events'
+                url: /neroli/admin/eventcontroller
+                icon: icon-sitemap
+            partners-menu-item:
+                label: 'neroli.admin::lang.admin.partners'
+                url: /neroli/admin/partnercontroller
+                icon: icon-sitemap
+            socials-menu-item:
+                label: 'neroli.admin::lang.admin.socials'
+                url: /neroli/admin/social
+                icon: icon-sitemap

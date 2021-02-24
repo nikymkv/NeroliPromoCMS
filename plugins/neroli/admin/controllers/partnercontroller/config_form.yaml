@@ -1,0 +1,11 @@
+name: PartnerController
+modelClass: Neroli\Admin\Models\Partner
+form: $/neroli/admin/models/partner/fields.yaml
+defaultRedirect: neroli/admin/partnercontroller
+create:
+    redirect: 'neroli/admin/partnercontroller/update/:id'
+    redirectClose: neroli/admin/partnercontroller
+update:
+    redirect: neroli/admin/partnercontroller
+    redirectClose: neroli/admin/partnercontroller
+preview: {  }

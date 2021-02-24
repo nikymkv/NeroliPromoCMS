@@ -1,0 +1,12 @@
+fields:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: title
+            type: slug
+        type: text

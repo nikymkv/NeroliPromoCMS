@@ -1,0 +1,9 @@
+columns:
+    name:
+        label: 'neroli.admin::lang.plugin.name'
+        type: text
+        searchable: true
+        sortable: true
+    url:
+        label: URL
+        type: text

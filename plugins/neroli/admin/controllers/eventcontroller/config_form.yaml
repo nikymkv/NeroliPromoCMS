@@ -1,0 +1,11 @@
+name: EventController
+modelClass: Neroli\Admin\Models\Event
+form: $/neroli/admin/models/event/fields.yaml
+defaultRedirect: neroli/admin/eventcontroller
+create:
+    redirect: 'neroli/admin/eventcontroller/update/:id'
+    redirectClose: neroli/admin/eventcontroller
+update:
+    redirect: neroli/admin/eventcontroller
+    redirectClose: neroli/admin/eventcontroller
+preview: {  }

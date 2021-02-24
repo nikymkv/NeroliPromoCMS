@@ -1,0 +1,6 @@
+plugin:
+    name: 'neroli.feedback::lang.plugin.name'
+    description: 'neroli.feedback::lang.plugin.description'
+    author: Neroli
+    icon: oc-icon-adjust
+    homepage: ''

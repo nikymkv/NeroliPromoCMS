@@ -1,0 +1,11 @@
+name: CatEventController
+modelClass: Neroli\Admin\Models\CatEvent
+form: $/neroli/admin/models/catevent/fields.yaml
+defaultRedirect: neroli/admin/cateventcontroller
+create:
+    redirect: 'neroli/admin/cateventcontroller/update/:id'
+    redirectClose: neroli/admin/cateventcontroller
+update:
+    redirect: neroli/admin/cateventcontroller
+    redirectClose: neroli/admin/cateventcontroller
+preview: {  }

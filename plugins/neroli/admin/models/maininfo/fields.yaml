@@ -1,0 +1,58 @@
+fields:
+    title:
+        label: 'neroli.admin::lang.admin.title'
+        span: left
+        type: text
+    expired_in:
+        label: 'neroli.admin::lang.admin.expired_in'
+        mode: datetime
+        span: right
+        type: datepicker
+    desc_1:
+        label: 'neroli.admin::lang.admin.desc_1'
+        size: ''
+        span: left
+        type: richeditor
+    desc_2:
+        label: 'neroli.admin::lang.admin.desc_2'
+        size: ''
+        span: right
+        type: richeditor
+    address:
+        label: 'neroli.admin::lang.admin.address'
+        span: auto
+        type: text
+    phone:
+        label: 'neroli.admin::lang.admin.phone'
+        span: auto
+        type: text
+    image_1:
+        label: 'neroli.admin::lang.admin.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+        commentAbove: 'Изображение в шапке слева'
+    image_2:
+        label: 'neroli.admin::lang.admin.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+        commentAbove: 'Изображение в шапке справа'
+    image_3:
+        label: 'neroli.admin::lang.admin.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+        commentAbove: 'Изображение в подвале сайта'

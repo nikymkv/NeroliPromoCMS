@@ -1,0 +1,11 @@
+name: HeaderSliderContoller
+modelClass: Neroli\Admin\Models\HeaderSlider
+form: $/neroli/admin/models/headerslider/fields.yaml
+defaultRedirect: neroli/admin/headerslidercontoller
+create:
+    redirect: 'neroli/admin/headerslidercontoller/update/:id'
+    redirectClose: neroli/admin/headerslidercontoller
+update:
+    redirect: neroli/admin/headerslidercontoller
+    redirectClose: neroli/admin/headerslidercontoller
+preview: {  }

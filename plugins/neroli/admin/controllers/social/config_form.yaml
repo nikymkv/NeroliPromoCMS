@@ -1,0 +1,11 @@
+name: Social
+modelClass: Neroli\Admin\Models\Social
+form: $/neroli/admin/models/social/fields.yaml
+defaultRedirect: neroli/admin/social
+create:
+    redirect: 'neroli/admin/social/update/:id'
+    redirectClose: neroli/admin/social
+update:
+    redirect: neroli/admin/social
+    redirectClose: neroli/admin/social
+preview: {  }

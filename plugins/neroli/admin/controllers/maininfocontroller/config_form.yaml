@@ -1,0 +1,11 @@
+name: MainInfoController
+modelClass: Neroli\Admin\Models\MainInfo
+form: $/neroli/admin/models/maininfo/fields.yaml
+defaultRedirect: neroli/admin/maininfocontroller
+create:
+    redirect: 'neroli/admin/maininfocontroller/update/:id'
+    redirectClose: neroli/admin/maininfocontroller
+update:
+    redirect: neroli/admin/maininfocontroller
+    redirectClose: neroli/admin/maininfocontroller
+preview: {  }

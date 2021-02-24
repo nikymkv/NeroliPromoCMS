@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table neroli_admin_header_slider'
+    - builder_table_create_neroli_admin_header_slider.php
+1.0.3:
+    - 'Created table neroli_admin_main_info'
+    - builder_table_create_neroli_admin_main_info.php
+1.0.4:
+    - 'Updated table neroli_admin_main_info'
+    - builder_table_update_neroli_admin_main_info.php
+1.0.5:
+    - 'Created table neroli_admin_cat_event'
+    - builder_table_create_neroli_admin_cat_event.php
+1.0.6:
+    - 'Created table neroli_admin_events'
+    - builder_table_create_neroli_admin_events.php
+1.0.7:
+    - 'Updated table neroli_admin_events'
+    - builder_table_update_neroli_admin_events.php
+1.0.8:
+    - 'Created table neroli_admin_partners'
+    - builder_table_create_neroli_admin_partners.php
+1.0.9:
+    - 'Created table neroli_admin_socials'
+    - builder_table_create_neroli_admin_socials.php
+1.0.10:
+    - 'Updated table neroli_admin_main_info'
+    - builder_table_update_neroli_admin_main_info_2.php

@@ -1,0 +1,73 @@
+title = "Demonstration"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[builderList socialList]
+modelClass = "Neroli\Admin\Models\Social"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[builderList mainInfoList]
+modelClass = "Neroli\Admin\Models\MainInfo"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[feedbackform]
+==
+{% set socials = socialList.records %}
+{% set mainInfo = mainInfoList.records[0] %}
+<section class="gallery">
+    {% partial 'gallery' %}
+</section>
+
+<section class="partners">
+    {% partial 'partners' %}
+</section>
+
+<section class="bePartners">
+    <p>хотите стать нашим партнером?</p>
+    <hr>
+</section>
+
+<section class="feedback">
+    <div class="feedback__head">
+        <div class="feedback__form">
+            {% component 'feedbackform' %}
+        </div>
+        <div class="feedback__img">
+            <div class="fi__img">
+                <img src="{{ mainInfo.image_3.path }}" alt="">
+            </div>
+            <div class="fb__sn">
+                {% for item in socials %}
+                    <a href="{{ item.url }}"><img src="{{ item.image.path }}" alt=""></a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="feedback__footer">
+        <span>{{ mainInfo.address }}, {{ mainInfo.phone }}</span>
+        <p>© 2021 ITD Company. All rights reserved</p>
+    </div>
+
+    <img class="feedbackBG feedbackBG__topRight" src="{{ 'assets/img/callmeTopRight.svg' | theme }}" alt="">
+    <img class="feedbackBG feedbackBG__bottomLeft" src="{{ 'assets/img/callmeBottomLeft.svg' | theme }}" alt="">
+    <img class="feedbackBG feedbackBG__rightBottom" src="{{ 'assets/img/callme_rightbottom.svg' | theme }}" alt="">
+    <img class="feedbackBG feedbackBG__topRightCloud" src="{{ 'assets/img/callmeTopRightCloud.svg' | theme }}"
+        alt="">
+    <img class="feedbackBG feedbackBG__leftBottom" src="{{ 'assets/img/callmeLeftCloud.svg' | theme }}" alt="">
+
+</section>
+
+<img src="{{ 'assets/img/btnUp.svg' | theme }}" id="btnUP" class="btnUP">

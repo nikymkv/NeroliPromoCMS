@@ -1,0 +1,133 @@
+[builderList headerSlider]
+modelClass = "Neroli\Admin\Models\HeaderSlider"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "alt"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[builderList mainInfo]
+modelClass = "Neroli\Admin\Models\MainInfo"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[builderList socialList]
+modelClass = "Neroli\Admin\Models\Social"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set headerSlider = headerSlider.records %}
+{% set mainInfo = mainInfo.records[0] %}
+{% set socials = socialList.records %}
+<div class="main__text">
+      <div class="main__text__logo">
+          <img src="{{ 'assets/img/logo.svg' | theme }}" alt="" class="logo" />
+          <img src="{{ 'assets/img/menu_mobil.svg' | theme }}" alt="" class="mobil__menu" id="mobil__menu">
+      </div>
+      <div class="main__text__block">
+          <div class="mtb__sn">
+            {% for item in socials %}
+                <a href="{{ item.url }}"><img src="{{ item.image.path }}" alt="{{ item.name }}"></a>
+            {% endfor %}
+          </div>
+          <div class="mtb__text">
+              <span>{{ mainInfo.title }}</span>
+              <hr />
+                  {{ mainInfo.desc_1 | raw}}
+              <label id="InTheForm">кнопка</label>
+          </div>
+      </div>
+  </div>
+  <div class="main_slider">
+      <div class="slider mainSlider">
+        {% for slide in headerSlider %}
+            <div><img src="{{ slide.image.path }}" alt="{{ slide.alt }}" /></div>
+        {% endfor %}
+      </div>
+      <div class="ms__button__wrap"></div>
+  </div>
+  <div class="main__text__block main__text__block__mobil">
+      <div class="mtb__sn">
+        {% for item in socials %}
+            <a href="{{ item.url }}"><img src="{{ item.image.path }}" alt="{{ item.name }}"></a>
+        {% endfor %}
+      </div>
+      <div class="mtb__text">
+          <span>{{ mainInfo.title }}</span>
+          <hr />
+            {{ mainInfo.desc_2 | raw }}
+          <label id="InTheForm">кнопка</label>
+      </div>
+  </div>
+  <div class="mobil__menu__nav" id="mobil__menu__nav">
+      <ul>
+          <li id="topPage">Главная</li>
+          <li id="eventPage">Начало мероприятия</li>
+          <li id="galleryPage">Галерея</li>
+          <li id="partnersPage">Партнеры</li>
+          <li id="feedback__nav">Стать участником</li>
+      </ul>
+  </div>
+</section>
+<section class="nextEvent">
+  <div class="nextEvent__time">
+      <div id="timer" time="{{ mainInfo.expired_in }}">
+          <div><span id="days"></span></div>
+          <div><span>:</span></div>
+          <div><span id="hours"></span></div>
+          <div><span>:</span></div>
+          <div><span id="minutes"></span></div>
+      </div>
+      <div class="nt__title">
+          <p>дней</p>
+          <p>часов</p>
+          <p>минут</p>
+      </div>
+      <hr class="nexEvent__hr" />
+  </div>
+  <div class="nextEvent__content">
+      <div class="nc__imgLeft">
+          <img src="{{ mainInfo.image_1.path }}" alt="" />
+      </div>
+      <div class="nc__text">
+          <p>
+            {{ mainInfo.desc_2|replace({'<p>': '', '</p>': ''})|raw }}
+          </p>
+          <span>цифра</span>
+          <span class="nc__number">10+</span>
+      </div>
+      <div class="nc__imgRight">
+          <img src="{{ mainInfo.image_2.path }}" alt="" />
+      </div>
+      <div class="nextEvent__time nc__timer">
+          <div id="timer">
+              <div><span id="days"></span></div>
+              <div><span>:</span></div>
+              <div><span id="hours"></span></div>
+              <div><span>:</span></div>
+              <div><span id="minutes"></span></div>
+          </div>
+
+          <div class="nt__title">
+              <p>дней</p>
+              <p>часов</p>
+              <p>минут</p>
+          </div>
+          <hr class="nexEvent__hr" />
+      </div>
+  </div>
+
+  <img class="timer__tpoRight" src="{{ 'assets/img/timer__tpoRight.svg' | theme }}" alt="" />
+  <img class="timer__bottom" src="{{ 'assets/img/timer__bottom.svg' | theme }}" alt="" />

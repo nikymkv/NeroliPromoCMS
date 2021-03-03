@@ -1,0 +1,7 @@
+columns:
+    above_feedback:
+        label: 'neroli.admin::lang.admin.above_feedback'
+        type: text
+    title_feedback:
+        label: 'neroli.admin::lang.admin.title_feedback'
+        type: text

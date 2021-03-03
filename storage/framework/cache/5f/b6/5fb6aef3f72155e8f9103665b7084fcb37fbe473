@@ -1,4 +1,4 @@
-1614188916a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:2357:"title = "Demonstration"
+1614774038a:1:{s:8:"home.htm";a:13:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:2885:"title = "Neroli"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -24,9 +24,20 @@ detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
 
 [feedbackform]
+
+[builderList footerInfoList]
+modelClass = "Neroli\Admin\Models\FooterInfo"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title_feedback"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
 {% set socials = socialList.records %}
 {% set mainInfo = mainInfoList.records[0] %}
+{% set footerInfo = footerInfoList.records[0] %}
 <section class="gallery">
     {% partial 'gallery' %}
 </section>
@@ -36,18 +47,20 @@ pageNumber = "{{ :page }}"
 </section>
 
 <section class="bePartners">
-    <p>хотите стать нашим партнером?</p>
+    <p>{{ footerInfo.above_feedback }}</p>
     <hr>
+    <img src="{{ footerInfo.image_1.thumb(1905, 300, {mode:'auto', quality:30}) }}" alt="">
 </section>
 
 <section class="feedback">
     <div class="feedback__head">
         <div class="feedback__form">
+            <p class="form__title">{{ footerInfo.title_feedback }}</p>
             {% component 'feedbackform' %}
         </div>
         <div class="feedback__img">
             <div class="fi__img">
-                <img src="{{ mainInfo.image_3.path }}" alt="">
+                <img src="{{ footerInfo.image_2.thumb(810, 540, {mode:'auto', quality:85}) }}" alt="">
             </div>
             <div class="fb__sn">
                 {% for item in socials %}
@@ -58,7 +71,7 @@ pageNumber = "{{ :page }}"
     </div>
     <div class="feedback__footer">
         <span>{{ mainInfo.address }}, {{ mainInfo.phone }}</span>
-        <p>© 2021 ITD Company. All rights reserved</p>
+        <p>© 2021 <a href="http://itd.company">ITD Company</a>.  All rights reserved</p>
     </div>
 
     <img class="feedbackBG feedbackBG__topRight" src="{{ 'assets/img/callmeTopRight.svg' | theme }}" alt="">
@@ -70,8 +83,9 @@ pageNumber = "{{ :page }}"
 
 </section>
 
-<img src="{{ 'assets/img/btnUp.svg' | theme }}" id="btnUP" class="btnUP">";s:5:"mtime";i:1614179264;s:6:"markup";s:1757:"{% set socials = socialList.records %}
+<img src="{{ 'assets/img/btnUp.svg' | theme }}" id="btnUP" class="btnUP">";s:5:"mtime";i:1614770421;s:6:"markup";s:2023:"{% set socials = socialList.records %}
 {% set mainInfo = mainInfoList.records[0] %}
+{% set footerInfo = footerInfoList.records[0] %}
 <section class="gallery">
     {% partial 'gallery' %}
 </section>
@@ -81,18 +95,20 @@ pageNumber = "{{ :page }}"
 </section>
 
 <section class="bePartners">
-    <p>хотите стать нашим партнером?</p>
+    <p>{{ footerInfo.above_feedback }}</p>
     <hr>
+    <img src="{{ footerInfo.image_1.thumb(1905, 300, {mode:'auto', quality:30}) }}" alt="">
 </section>
 
 <section class="feedback">
     <div class="feedback__head">
         <div class="feedback__form">
+            <p class="form__title">{{ footerInfo.title_feedback }}</p>
             {% component 'feedbackform' %}
         </div>
         <div class="feedback__img">
             <div class="fi__img">
-                <img src="{{ mainInfo.image_3.path }}" alt="">
+                <img src="{{ footerInfo.image_2.thumb(810, 540, {mode:'auto', quality:85}) }}" alt="">
             </div>
             <div class="fb__sn">
                 {% for item in socials %}
@@ -103,7 +119,7 @@ pageNumber = "{{ :page }}"
     </div>
     <div class="feedback__footer">
         <span>{{ mainInfo.address }}, {{ mainInfo.phone }}</span>
-        <p>© 2021 ITD Company. All rights reserved</p>
+        <p>© 2021 <a href="http://itd.company">ITD Company</a>.  All rights reserved</p>
     </div>
 
     <img class="feedbackBG feedbackBG__topRight" src="{{ 'assets/img/callmeTopRight.svg' | theme }}" alt="">
@@ -115,4 +131,4 @@ pageNumber = "{{ :page }}"
 
 </section>
 
-<img src="{{ 'assets/img/btnUp.svg' | theme }}" id="btnUP" class="btnUP">";s:4:"code";N;s:5:"title";s:13:"Demonstration";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:22:"builderList socialList";a:8:{s:10:"modelClass";s:26:"Neroli\Admin\Models\Social";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"name";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:24:"builderList mainInfoList";a:8:{s:10:"modelClass";s:28:"Neroli\Admin\Models\MainInfo";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:12:"feedbackform";a:0:{}}}
+<img src="{{ 'assets/img/btnUp.svg' | theme }}" id="btnUP" class="btnUP">";s:4:"code";N;s:5:"title";s:6:"Neroli";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:22:"builderList socialList";a:8:{s:10:"modelClass";s:26:"Neroli\Admin\Models\Social";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"name";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:24:"builderList mainInfoList";a:8:{s:10:"modelClass";s:28:"Neroli\Admin\Models\MainInfo";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:12:"feedbackform";a:0:{}s:26:"builderList footerInfoList";a:8:{s:10:"modelClass";s:30:"Neroli\Admin\Models\FooterInfo";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:14:"title_feedback";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}}}

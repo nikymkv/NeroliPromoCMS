@@ -1,0 +1,11 @@
+name: FooterInfoController
+modelClass: Neroli\Admin\Models\FooterInfo
+form: $/neroli/admin/models/footerinfo/fields.yaml
+defaultRedirect: neroli/admin/footerinfocontroller
+create:
+    redirect: 'neroli/admin/footerinfocontroller/update/:id'
+    redirectClose: neroli/admin/footerinfocontroller
+update:
+    redirect: neroli/admin/footerinfocontroller
+    redirectClose: neroli/admin/footerinfocontroller
+preview: {  }

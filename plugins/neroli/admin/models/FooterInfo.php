@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class CatEvent extends Model
+class FooterInfo extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
@@ -19,7 +19,7 @@ class CatEvent extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'neroli_admin_cat_event';
+    public $table = 'neroli_admin_footer_info';
 
     /**
      * @var array Validation rules
@@ -27,7 +27,8 @@ class CatEvent extends Model
     public $rules = [
     ];
 
-    public $hasMany = [
-        'events' => ['Neroli\Admin\Models\Event'],
+    public $attachOne = [
+        'image_1' => 'System\Models\File',
+        'image_2' => 'System\Models\File',
     ];
 }

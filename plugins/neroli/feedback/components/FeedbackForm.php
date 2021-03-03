@@ -28,8 +28,8 @@ class FeedbackForm extends ComponentBase
 
 
         Mail::send($pat, $vars, function($message) {
-            $message->to('kojiek7212@gmail.com', 'Admin Person');
-            $message->subject('New message from NeraliPromo');
+            $message->to('Neroli119@mail.ru', 'Admin Person');
+            $message->subject('New message from NeroliPromo');
         });
     }
 

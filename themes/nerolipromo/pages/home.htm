@@ -1,4 +1,4 @@
-title = "Demonstration"
+title = "Neroli"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -24,9 +24,20 @@ detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
 
 [feedbackform]
+
+[builderList footerInfoList]
+modelClass = "Neroli\Admin\Models\FooterInfo"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title_feedback"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
 {% set socials = socialList.records %}
 {% set mainInfo = mainInfoList.records[0] %}
+{% set footerInfo = footerInfoList.records[0] %}
 <section class="gallery">
     {% partial 'gallery' %}
 </section>
@@ -36,18 +47,20 @@ pageNumber = "{{ :page }}"
 </section>
 
 <section class="bePartners">
-    <p>хотите стать нашим партнером?</p>
+    <p>{{ footerInfo.above_feedback }}</p>
     <hr>
+    <img src="{{ footerInfo.image_1.thumb(1905, 300, {mode:'auto', quality:30}) }}" alt="">
 </section>
 
 <section class="feedback">
     <div class="feedback__head">
         <div class="feedback__form">
+            <p class="form__title">{{ footerInfo.title_feedback }}</p>
             {% component 'feedbackform' %}
         </div>
         <div class="feedback__img">
             <div class="fi__img">
-                <img src="{{ mainInfo.image_3.path }}" alt="">
+                <img src="{{ footerInfo.image_2.thumb(810, 540, {mode:'auto', quality:85}) }}" alt="">
             </div>
             <div class="fb__sn">
                 {% for item in socials %}
@@ -58,7 +71,7 @@ pageNumber = "{{ :page }}"
     </div>
     <div class="feedback__footer">
         <span>{{ mainInfo.address }}, {{ mainInfo.phone }}</span>
-        <p>© 2021 ITD Company. All rights reserved</p>
+        <p>© 2021 <a href="http://itd.company">ITD Company</a>.  All rights reserved</p>
     </div>
 
     <img class="feedbackBG feedbackBG__topRight" src="{{ 'assets/img/callmeTopRight.svg' | theme }}" alt="">

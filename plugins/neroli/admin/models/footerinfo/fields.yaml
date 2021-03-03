@@ -1,0 +1,29 @@
+fields:
+    above_feedback:
+        label: 'neroli.admin::lang.admin.above_feedback'
+        span: left
+        type: text
+    title_feedback:
+        label: 'neroli.admin::lang.admin.title_feedback'
+        span: right
+        type: text
+    image_1:
+        label: 'neroli.admin::lang.admin.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+        commentAbove: 'Изображение перед формой обратной связи'
+    image_2:
+        label: 'neroli.admin::lang.admin.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+        commentAbove: 'Изображение справа'

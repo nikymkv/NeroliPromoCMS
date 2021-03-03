@@ -54,7 +54,8 @@ function initializeTimer() {
     }
     timerId = setInterval(secOut, 1000);
   } else {
-    alert("Установленая дата уже прошла");
+    document.getElementsByClassName("nextEvent__time")[0].style.display =
+      "none";
   }
 }
 
@@ -85,12 +86,13 @@ let partnersPage = document.getElementsByClassName("partners");
 let bePartnersPage = document.getElementsByClassName("bePartners");
 let feedbackPage = document.getElementsByClassName("feedback");
 let timer = document.getElementById("timer");
-var toTheForm =
-  topPage[0].offsetHeight +
-  eventPage[0].offsetHeight +
-  galleryPage[0].offsetHeight +
-  bePartnersPage[0].offsetHeight +
-  feedbackPage[0].offsetHeight;
+// var toTheForm =
+//   topPage[0].offsetHeight +
+//   eventPage[0].offsetHeight +
+//   galleryPage[0].offsetHeight +
+//   bePartnersPage[0].offsetHeight +
+//   feedbackPage[0].offsetHeight;
+
 
 nav_img.onclick = function () {
   nav[0].classList.toggle("mobil__menu__active");
@@ -122,6 +124,7 @@ galleryPage__nav.onclick = function () {
     top: distance,
     behavior: "smooth",
   });
+  console.log('next slide')
 };
 
 partnersPage__nav.onclick = function () {
@@ -165,7 +168,7 @@ let galleriSlider1 = document.getElementsByClassName("gallerySlider1")[0];
 let galleriSlider2 = document.getElementsByClassName("gallerySlider2")[0];
 let galleriSlider3 = document.getElementsByClassName("gallerySlider3")[0];
 
-var sliderId = 0
+var sliderId = 10
 
 let galleriSliderMobil1 = document.getElementsByClassName(
   "gallerySlider__mobil1"
@@ -177,57 +180,78 @@ let galleriSliderMobil3 = document.getElementsByClassName(
   "gallerySlider__mobil3"
 )[0];
 
-gallery_toogle1.onclick = function () {
-  gallery_toogle1.style.fontWeight = 600;
-  gallery_toogle2.style.fontWeight = 400;
-  gallery_toogle3.style.fontWeight = 400;
-  galleriSlider1.classList.remove("disabledSlider");
-  galleriSlider2.classList.add("disabledSlider");
-  galleriSlider3.classList.add("disabledSlider");
-  galleriSliderMobil1.classList.remove("disabledSlider");
-  galleriSliderMobil2.classList.add("disabledSlider");
-  galleriSliderMobil3.classList.add("disabledSlider");
-  sliderId = 10
-};
-gallery_toogle2.onclick = function () {
-  gallery_toogle1.style.fontWeight = 400;
-  gallery_toogle2.style.fontWeight = 600;
-  gallery_toogle3.style.fontWeight = 400;
-  galleriSlider1.classList.add("disabledSlider");
-  galleriSlider2.classList.remove("disabledSlider");
-  galleriSlider3.classList.add("disabledSlider");
-  galleriSliderMobil1.classList.add("disabledSlider");
-  galleriSliderMobil2.classList.remove("disabledSlider");
-  galleriSliderMobil3.classList.add("disabledSlider");
-  sliderId = 20
-};
-gallery_toogle3.onclick = function () {
-  gallery_toogle1.style.fontWeight = 400;
-  gallery_toogle2.style.fontWeight = 400;
-  gallery_toogle3.style.fontWeight = 600;
-  galleriSlider1.classList.add("disabledSlider");
-  galleriSlider2.classList.add("disabledSlider");
-  galleriSlider3.classList.remove("disabledSlider");
-  galleriSliderMobil1.classList.add("disabledSlider");
-  galleriSliderMobil2.classList.add("disabledSlider");
-  galleriSliderMobil3.classList.remove("disabledSlider");
-  sliderId = 30
-};
+// gallery_toogle1.onclick = function () {
+//   gallery_toogle1.style.fontWeight = 600;
+//   gallery_toogle2.style.fontWeight = 400;
+//   gallery_toogle3.style.fontWeight = 400;
+//   galleriSlider1.classList.remove("disabledSlider");
+//   galleriSlider2.classList.add("disabledSlider");
+//   galleriSlider3.classList.add("disabledSlider");
+//   galleriSliderMobil1.classList.remove("disabledSlider");
+//   galleriSliderMobil2.classList.add("disabledSlider");
+//   galleriSliderMobil3.classList.add("disabledSlider");
+//   sliderId = 10
+// };
+// gallery_toogle2.onclick = function () {
+//   gallery_toogle1.style.fontWeight = 400;
+//   gallery_toogle2.style.fontWeight = 600;
+//   gallery_toogle3.style.fontWeight = 400;
+//   galleriSlider1.classList.add("disabledSlider");
+//   galleriSlider2.classList.remove("disabledSlider");
+//   galleriSlider3.classList.add("disabledSlider");
+//   galleriSliderMobil1.classList.add("disabledSlider");
+//   galleriSliderMobil2.classList.remove("disabledSlider");
+//   galleriSliderMobil3.classList.add("disabledSlider");
+//   sliderId = 20
+// };
+// gallery_toogle3.onclick = function () {
+//   gallery_toogle1.style.fontWeight = 400;
+//   gallery_toogle2.style.fontWeight = 400;
+//   gallery_toogle3.style.fontWeight = 600;
+//   galleriSlider1.classList.add("disabledSlider");
+//   galleriSlider2.classList.add("disabledSlider");
+//   galleriSlider3.classList.remove("disabledSlider");
+//   galleriSliderMobil1.classList.add("disabledSlider");
+//   galleriSliderMobil2.classList.add("disabledSlider");
+//   galleriSliderMobil3.classList.remove("disabledSlider");
+//   sliderId = 30
+// };
 
-document.getElementById("InTheForm").onclick = function () {
-  window.scrollTo({
-    top: toTheForm,
-    behavior: "smooth",
-  });
-};
-document.getElementsByClassName(
-  "partners__slide__add"
-)[0].onclick = function () {
-  window.scrollTo({
-    top: toTheForm,
-    behavior: "smooth",
-  });
-};
+let inForm = document.querySelectorAll(".mtb__text > #InTheForm")
+for(let elem of inForm){
+  elem.onclick = function(){
+    // let toTheForm = document.body.scrollHeight
+    let toTheForm = document.querySelector('.feedback__head').getBoundingClientRect().top
+    window.scrollTo({
+      top: toTheForm,
+      behavior: "smooth",
+    });
+    console.log(toTheForm)
+  }
+}
+// document.querySelectorAll(".mtb__text > #InTheForm")[1].onclick = function () {
+
+//   window.scrollTo({
+//     top: toTheForm,
+//     behavior: "smooth",
+//   });
+//   console.log(toTheForm)
+// };
+let inForm1 = document.querySelectorAll(
+  ".partners__slide__add")
+  for(let elem1 of inForm1){
+    elem1.onclick = function(){
+
+      // let toTheForm1 = document.querySelector('.feedback__head').getBoundingClientRect().top
+      let toTheForm1 = document.body.scrollHeight
+      window.scrollTo({
+        top: toTheForm1,
+        behavior: "smooth",
+      });
+      console.log(toTheForm1)
+    }
+  }
+
 
 // Animation
 
@@ -244,60 +268,113 @@ document.addEventListener("scroll", () => {
   }
 });
 
-
-
 nav_img.onclick = function () {
   nav[0].classList.toggle("mobil__menu__active");
-  if (nav_img.getAttribute("src") === "http://nerolipromo.loc/themes/nerolipromo/assets/img/menu_mobil.svg") {
-  nav_img.setAttribute("src", "http://nerolipromo.loc/themes/nerolipromo/assets/img/cross.svg");
+  if (nav_img.getAttribute("src") === "http://neroli.online/themes/nerolipromo/assets/img/menu_mobil.svg") {
+  nav_img.setAttribute("src", "http://neroli.online/themes/nerolipromo/assets/img/cross.svg");
   } else {
-  nav_img.setAttribute("src", "http://nerolipromo.loc/themes/nerolipromo/assets/img/menu_mobil.svg");
+  nav_img.setAttribute("src", "http://neroli.online/themes/nerolipromo/assets/img/menu_mobil.svg");
   }
   };
-
 
   // Gallery
 
   
-  function setTitleGallary(){
-    let gallery_slide = document.querySelectorAll('#slick-slide' + sliderId + ' > .gallery_slide')
+  // function setTitleGallary(){
+  //   let gallery_slide = document.querySelector('#slick-slide' + sliderId + ' > .gallery_slide')
 
-    
-    let gb__date = document.getElementById('gb__date')
-    let gb__title = document.getElementById('gb__title')
-    // for(let elem of gallery_slide){
-    //   gb__date.innerHTML = elem.getAttribute('date')
-    //   gb__title.innerHTML = elem.getAttribute('title')
+  //   let gb__date = document.getElementById('gb__date')
+  //   let gb__title = document.getElementById('gb__title')
+  //   // for(let elem of gallery_slide){
+  //   //   gb__date.innerHTML = elem.getAttribute('date')
+  //   //   gb__title.innerHTML = elem.getAttribute('title')
       
-    // }
+  //   // }
 
-      // for(let elem of gallery_slide){
-      gb__date.innerHTML = gallery_slide[0].getAttribute('date')
-      gb__title.innerHTML = gallery_slide[0].getAttribute('title')
-      console.log(sliderId)
+  //     // for(let elem of gallery_slide){
+  //     gb__date.innerHTML = gallery_slide.getAttribute('date')
+  //     gb__title.innerHTML = gallery_slide.getAttribute('title')
 
-    // }
-  }
+  //   // }
+  // }
 
   window.onload = function () {
     initializeTimer();
-    window.scrollTo(0, 0);
     
     setTimeout(function(){gallery_toogle1.click()},200)
-    
+    var toTheForm = document.body.scrollHeight
+    console.log('onload', document.body.scrollHeight)
     const mediaQuery = window.matchMedia("(max-width: 920px)");
     if (mediaQuery.matches) {
       document.getElementsByClassName("nextEvent__time")[0].remove();
     }
+
+    eventSliderGallery()
+
   };
 
+  function eventSliderGallery()
+  {
+    let next_btn = document.querySelector('.gallerySlider1 button.slick-next.slick-arrow')
+    next_btn.addEventListener('click', function(){
+      getPCSlider()
+    })
+
+    let prev_btn = document.querySelector('.gallerySlider1 button.slick-prev.slick-arrow')
+    prev_btn.addEventListener('click', function(){
+      getPCSlider()
+    })
+
+    let next_btn_mobile = document.querySelector('.slider.gallerySlider.gallerySlider__mobil.gallerySlider__mobil1.slick-initialized.slick-slider button.slick-next.slick-arrow')
+    next_btn_mobile.addEventListener('click', function(){
+      getMobileSlider()
+    })
+
+    let prev_btn_mobile = document.querySelector('.slider.gallerySlider.gallerySlider__mobil.gallerySlider__mobil1.slick-initialized.slick-slider button.slick-prev.slick-arrow')
+    prev_btn_mobile.addEventListener('click', function(){
+      getMobileSlider()
+    })
+  }
+
+  function getMobileSlider()
+  {
+    let img = document.querySelector('.gallerySlider__mobil1 .slick-list .slick-track .slick-current.slick-active img')
+    let gb__date_mobile = document.getElementById('gb__date_mobile')
+    let gb__title_mobile = document.getElementById('gb__title_mobile')
+    gb__date_mobile.innerText = img.getAttribute('time')
+    gb__title_mobile.innerText = '“' + img.getAttribute('title') + '”'
+  }
+
+  function getPCSlider()
+  {
+    let curId_gs1 = document.querySelector('.gallerySlider1 .slick-list .slick-track .slick-current.slick-active').getAttribute('data-slick-index')
+    curId_gs1 = parseInt(curId_gs1) + 1
+    let slide = document.getElementById('slide_' + curId_gs1)
+    let gb__date = document.getElementById('gb__date')
+    let gb__title = document.getElementById('gb__title')
+    gb__date.innerText = slide.getAttribute('time')
+    gb__title.innerText = '“' + slide.getAttribute('ev_title') + '”'
+  }
+
+
+  function compressIMG(){
+    let compress =  document.querySelector('.gallerySlider__mobil > .slick-list > .slick-track > .slick-active')
+    let compBox = document.querySelector('.gallerySlider__mobil')
+    let arrow = document.querySelector('.gallerySlider__mobil > .slick-arrow')
+
+      compBox.style.height = compress.offsetHeight + 'px'
+
+    compBox.style.transition = '0.6s'
+  
+  }
 
 
 MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
 var observer = new MutationObserver(function(mutations, observer) {
     // Add the actions to be done here if a changes on DOM happened 
-    setTitleGallary()
+    // setTitleGallary()
+    // compressIMG()
 });
 
 // Register the element root you want to look for changes
@@ -305,3 +382,10 @@ observer.observe(document, {
   subtree: true,
   attributes: true
 });
+
+document.getElementById('phoneNumber').addEventListener('focus', function(){
+  document.getElementById('phoneNumber').setAttribute('placeholder', '0710000000')
+})
+document.getElementById('phoneNumber').addEventListener('blur', function(){
+  document.getElementById('phoneNumber').setAttribute('placeholder', 'Введите ваш номер телефона')
+})

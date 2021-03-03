@@ -14,7 +14,7 @@ pageNumber = "{{ :page }}"
 <div class="parters__slider">
     <div class="slider partnersSlider">
         {% for item in partners %}
-            <div class="partners__slide"><img src="{{ item.image.path }}" alt="" /></div>
+            <div class="partners__slide"><a href="{{ item.url }}"><img src="{{ item.image.thumb(200, 200, {mode:'auto', quality:85}) }}" alt="" /></a></div>
         {% endfor %}
         <div class="partners__slide partners__slide__add"><img
                 src="{{ 'assets/img/gallerySlider__add.svg' | theme }}" alt="" />

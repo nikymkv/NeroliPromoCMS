@@ -6,6 +6,9 @@ class Plugin extends PluginBase
 {
     public function registerComponents()
     {
+        return [
+            'Neroli\Admin\Components\GalleryForm' => 'galleryform',
+        ];
     }
 
     public function registerSettings()

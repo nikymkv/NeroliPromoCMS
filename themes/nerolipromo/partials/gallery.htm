@@ -1,69 +1,46 @@
-[builderList catEvent]
-modelClass = "Neroli\Admin\Models\CatEvent"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "title"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
-
-[builderList events]
-modelClass = "Neroli\Admin\Models\Event"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "title"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
+[galleryform]
 ==
-{% set catEv = catEvent.records %}
-{% set ev = events.records %}
-
 <div class="gallery__title">
   <p>галерея</p>
   <hr />
 </div>
 <div class="gallery__toogle">
-    {% for item in catEv %}
-        <span id="galleryToogle{{ loop.index }}">{{ item.title }}</span>
+    {% for cat in gallery %}
+        <span id="galleryToogle{{ loop.index }}">{{ cat.title }}</span>
     {% endfor %}
 </div>
 <div class="gallery__slider">
-    {% for cat in catEv %}
+    {% for cat in gallery %}
   <div class="slider gallerySlider gallerySlider{{ loop.index }}">
-      {% for item in ev %}
-        {% if item.catEvent.title == cat.title %}
+      {% for event in cat.events %}
     <div>
-        <div class="gallery_slide" date="{{ item.date }}" title="{{ item.title }}">
-            <img class="gB1" src="{{ item.event_photos[0].path }}" alt="" />
-            <img class="gM1" src="{{ item.event_photos[1].path }}" alt="" />
-            <img class="gM2" src="{{ item.event_photos[2].path }}" alt="" />
-            <img class="gM3" src="{{ item.event_photos[3].path }}" alt="" />
-            <img class="gM4" src="{{ item.event_photos[4].path }}" alt="" />
-            <img class="gM5" src="{{ item.event_photos[5].path }}" alt="" />
-            <img class="gB2" src="{{ item.event_photos[6].path }}" alt="" />
+        <div class="gallery_slide" id='slide_{{ loop.index }}' time='{{ event.date }}' ev_title='{{ event.title }}'>
+            <img class="gB1" src="{{ event.event_photos[0].thumb(600, 900, {mode:'auto', quality:85}) }}" alt="" />
+            <img class="gM1" src="{{ event.event_photos[1].thumb(600, 900, {mode:'auto', quality:85}) }}" alt="" />
+            <img class="gM2" src="{{ event.event_photos[2].thumb(600, 900, {mode:'auto', quality:85}) }}" alt="" />
+            <img class="gM3" src="{{ event.event_photos[3].thumb(600, 900, {mode:'auto', quality:85}) }}" alt="" />
+            <img class="gM4" src="{{ event.event_photos[4].thumb(600, 900, {mode:'auto', quality:85}) }}" alt="" />
+            <img class="gM5" src="{{ event.event_photos[5].thumb(600, 900, {mode:'auto', quality:85}) }}" alt="" />
+            <img class="gB2" src="{{ event.event_photos[6].thumb(600, 900, {mode:'auto', quality:85}) }}" alt="" />
         </div>
     </div>
-        {% endif %}
       {% endfor %}
   </div>
   {% endfor %}
   <div class="gallarySlider__bottom">
-      <p id="gb__date">21.01.2021</p>
-      <span id="gb__title">“Название”</span>
+      <p id="gb__date">{{ gallery[0].events[0].date }}</p> - <p id="gb__title">“{{ gallery[0].events[0].title }}”</p>
   </div>
 </div>
+
 <div class="gallery__slider gallery__slider_mobil">
 
-    {% for cat in catEv %}
+    {% for cat in gallery %}
         <div class="slider gallerySlider gallerySlider__mobil gallerySlider__mobil{{ loop.index }}">
-            {% for item in ev %}
+            {% for event in cat.events %}
 
-                {% for img in item.event_photos %}
+                {% for img in event.event_photos %}
                     <div>
-                        <img class="gB1" src="{{ img.path }}" alt="" />
+                        <img class="gB1" src="{{ img.thumb(600, 900, {mode:'auto', quality:85}) }}" time="{{ event.date }}" title="{{ event.title }}" alt="" />
                     </div>
                 {% endfor %}
 
@@ -72,8 +49,7 @@ pageNumber = "{{ :page }}"
     {% endfor %}
 
   <div class="gallarySlider__bottom">
-      <p>21.01.2021</p>
-      <span>“искусство стиля”</span>
+      <p id="gb__date_mobile">{{ gallery[0].events[0].date }}</p> - <p id="gb__title_mobile">“{{ gallery[0].events[0].title }}”</p>
   </div>
 </div>
 

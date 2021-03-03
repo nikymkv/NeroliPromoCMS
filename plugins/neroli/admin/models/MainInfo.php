@@ -30,6 +30,5 @@ class MainInfo extends Model
     public $attachOne = [
         'image_1' => 'System\Models\File',
         'image_2' => 'System\Models\File',
-        'image_3' => 'System\Models\File',
     ];
 }

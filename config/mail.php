@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.gmail.com',
+    'host' => 'smtp.mail.ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => 587,
+    'port' => 465,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'noreply@domain.tld', 'name' => 'OctoberCMS'],
+    'from' => ['address' => 'Neroli119@mail.ru', 'name' => 'NeroliPromo'],
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'encryption' => 'tls',
+    'encryption' => 'ssl',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => 'kojiek7212@gmail.com',
+    'username' => 'Neroli119@mail.ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => 'chhweqgymglluefg',
+    'password' => 'Artema119',
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
     'to' => [
-        'email' => 'kojiek7212@gmail.com',
+        'email' => 'Neroli119@mail.ru',
         'name' => 'Catch all email'
     ],
 ];

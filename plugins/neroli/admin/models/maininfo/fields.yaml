@@ -26,6 +26,14 @@ fields:
         label: 'neroli.admin::lang.admin.phone'
         span: auto
         type: text
+    title_digit:
+        label: 'neroli.admin::lang.admin.title_digit'
+        span: auto
+        type: text
+    digit:
+        label: 'neroli.admin::lang.admin.digit'
+        span: auto
+        type: text
     image_1:
         label: 'neroli.admin::lang.admin.image'
         mode: image
@@ -46,13 +54,3 @@ fields:
         span: right
         type: fileupload
         commentAbove: 'Изображение в шапке справа'
-    image_3:
-        label: 'neroli.admin::lang.admin.image'
-        mode: image
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
-        span: left
-        type: fileupload
-        commentAbove: 'Изображение в подвале сайта'

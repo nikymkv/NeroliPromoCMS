@@ -53,7 +53,7 @@ pageNumber = "{{ :page }}"
   <div class="main_slider">
       <div class="slider mainSlider">
         {% for slide in headerSlider %}
-            <div><img src="{{ slide.image.path }}" alt="{{ slide.alt }}" /></div>
+            <div><img src="{{ slide.image.thumb(1500, 960, {mode:'auto', quality:85}) }}" alt="{{ slide.alt }}" /></div>
         {% endfor %}
       </div>
       <div class="ms__button__wrap"></div>
@@ -61,7 +61,7 @@ pageNumber = "{{ :page }}"
   <div class="main__text__block main__text__block__mobil">
       <div class="mtb__sn">
         {% for item in socials %}
-            <a href="{{ item.url }}"><img src="{{ item.image.path }}" alt="{{ item.name }}"></a>
+            <a href="{{ item.url }}"><img src="{{ item.image.thumb(1500, 960, {mode:'auto', quality:85}) }}" alt="{{ item.name }}"></a>
         {% endfor %}
       </div>
       <div class="mtb__text">
@@ -99,7 +99,7 @@ pageNumber = "{{ :page }}"
   </div>
   <div class="nextEvent__content">
       <div class="nc__imgLeft">
-          <img src="{{ mainInfo.image_1.path }}" alt="" />
+          <img src="{{ mainInfo.image_1.thumb(450, 680, {mode:'auto', quality:85}) }}" alt="" />
       </div>
       <div class="nc__text">
           <p>
@@ -109,7 +109,7 @@ pageNumber = "{{ :page }}"
           <span class="nc__number">10+</span>
       </div>
       <div class="nc__imgRight">
-          <img src="{{ mainInfo.image_2.path }}" alt="" />
+          <img src="{{ mainInfo.image_2.thumb(900, 600, {mode:'auto', quality:85}) }}" alt="" />
       </div>
       <div class="nextEvent__time nc__timer">
           <div id="timer">
